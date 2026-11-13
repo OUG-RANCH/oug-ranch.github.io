@@ -190,12 +190,10 @@ body.menu-open { overflow: hidden; }
   .index-list a { font-size: clamp(2rem, 5vw, 3.25rem); }   /* desktop: um pouco menor */
 }
 
-/* ===== FAIXA QUE ROLA (marquee) — decorativa, CSS puro, sem JS ===== */
+/* ===== FAIXAS QUE ROLAM (marquee) — decorativas, CSS puro, sem JS ===== */
 .marquee {
   overflow: hidden;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  padding: var(--space-md) 0;
+  padding: var(--space-sm) 0;
 }
 .marquee-track {
   display: flex;
@@ -232,7 +230,7 @@ body.menu-open { overflow: hidden; }
       transparent 14px 19px, var(--color-ink) 19px 22px,
       transparent 22px 24px);
 }
-.marquee--rev { border-top: 0; }   /* cercado faz o papel de divisor entre as duas faixas */
+.marquee--rev { padding-top: 0; }   /* as duas faixas grudadas, cercado só em cima e embaixo */
 
 /* ===== COLEÇÕES — prints ciena: capas grandes lado a lado, legenda DENTRO do tile ===== */
 #colecoes { padding: var(--space-2xl) 0 var(--space-3xl); }
