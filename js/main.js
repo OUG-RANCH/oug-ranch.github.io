@@ -1,7 +1,7 @@
 // js/main.js — lógica do site (Fase 1: só a gaveta do menu)
 //
 // REGRA DE ORDEM (convenção do projeto, valem para as Fases 2–4):
-//   os <script> de DADOS (ex.: collections.js, que cria window.OUG_COLLECTION)
+//   os <script> de DADOS (ex.: collections.js, que cria window.OUG_COLLECTIONS)
 //   entram ANTES deste arquivo no HTML — dados primeiro, lógica depois.
 //   Scripts clássicos apenas: sem módulos ES e sem fetch() (quebra no file://).
 //

@@ -75,6 +75,14 @@
     if (e.cover) {
       // Capa com FOTO: a capa ganha a classe de foto e entra a imagem
       // com width/height (sem pulo de layout) e lazy (fica abaixo da dobra).
+      // Só caminho relativo local (sem ":", sem "//", sem "/") — igual à
+      // convenção de caminhos relativos do site; outra coisa é pulada.
+      var local = e.cover.indexOf(':') === -1 &&
+                  e.cover.indexOf('//') === -1 &&
+                  e.cover.charAt(0) !== '/';
+      if (!local) {
+        console.warn('Capa ignorada (caminho precisa ser relativo, tipo images/collections/.../capa.webp): ' + e.cover);
+      } else {
       capa.classList.add('card-cover--photo');
       var foto = document.createElement('img');
       foto.setAttribute('src', e.cover);
@@ -86,7 +94,9 @@
         foto.setAttribute('height', e.coverH);
       }
       capa.appendChild(foto);
-    } else {
+      }
+    }
+    if (!e.cover || !local) {
       // Capa tipográfica (bloco de cor): variação tonal pela posição na home.
       capa.classList.add('cover-' + (((posicao - 1) % 4) + 1));
     }
@@ -107,4 +117,14 @@
     card.appendChild(capa);
     mount.appendChild(card);
   });
+
+  // Se NENHUMA entrada passou na validação (todos os slugs estranhos),
+  // não deixa a seção vazia: avisa o dono com a mesma mensagem amigável.
+  if (posicao === 0) {
+    mount.textContent = '';
+    var aviso = document.createElement('p');
+    aviso.className = 'cards-error';
+    aviso.textContent = 'N\u00E3o achei nenhuma cole\u00E7\u00E3o v\u00E1lida no arquivo de dados. Confira o campo slug no js/collections.js (tudo min\u00FAsculo, sem acento, sem espa\u00E7o).';
+    mount.appendChild(aviso);
+  }
 })();

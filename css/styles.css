@@ -311,13 +311,26 @@ body.menu-open { overflow: hidden; }
 .cover-3 { background: #E5E0D2; }
 .cover-4 { background: #EDE9DF; }
 
-/* Capa com FOTO: a imagem preenche o tile inteiro (mesmo 4/5 celular e 3/4
-   desktop de sempre) — width/height no <img> evitam pulo de layout. */
+/* Capa com FOTO: a imagem fica ABSOLUTA cobrindo o tile inteiro (mesmo 4/5
+   celular e 3/4 desktop de sempre) — width/height no <img> evitam pulo de
+   layout. Absoluta e não flex-item: flex espremeria a foto e empurraria a
+   legenda pra fora do tile. Fundo creme aparece enquanto a foto carrega. */
+.card-cover--photo {
+  background: #EDE9DF;
+}
 .card-cover--photo img {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+/* A legenda fica POR CIMA da foto: posicionada (relative) pinta acima do img
+   absoluto, e o texto ganha um respiro de contraste com sombra bem leve. */
+.card-cover--photo .card-title,
+.card-cover--photo .card-story {
+  position: relative;
+  text-shadow: 0 1px 2px rgba(244, 244, 239, 0.9);
 }
 
 /* Zoom sutil NO DESKTOP com mouse (D-07): só em tela grande E ponteiro que

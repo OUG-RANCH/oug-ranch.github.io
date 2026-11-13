@@ -77,8 +77,9 @@ window.OUG_COLLECTIONS = [
   //     // ^ com foto: a LARGURA da foto exportada no Squoosh (em pixels)
   //   coverH: 0,
   //     // ^ com foto: a ALTURA da foto exportada no Squoosh (em pixels)
-  //   order: 5
+  //   order: 1
   //     // ^ posição na home: o MENOR número aparece PRIMEIRO.
-  //     //   Coleção mais nova = número menor. Nunca repita um número.
+  //     //   Coleção mais nova = número MENOR (ex.: a nova é a 1ª → order: 1
+  //     //   e renumere as antigas: 2, 3, 4...). Nunca repita um número.
   // }
 ];

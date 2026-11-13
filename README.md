@@ -77,7 +77,7 @@ Onde fica cada coisa:
 
 ## Adicionar ou reordenar coleções
 
-As coleções da home agora vêm de **um lugar só**: o arquivo `js/collections.js`. Não precisa mexer em HTML pra nada. Dois passos:
+As coleções da home agora vêm de **um lugar só**: o arquivo `js/collections.js`. Não precisa mexer em HTML pra nada. Resumo em dois passos: **(1)** pasta de fotos + **(2)** uma entrada no arquivo. Na prática:
 
 1. **Passo 1 — Fotos (opcional agora):** enquanto a capa não tem foto, ela fica no bloco de cor aprovado (nada a fazer). Quando quiser capa com foto: exporte pela **regra nº 2** (Squoosh, WebP, os mesmos limites de largura/qualidade/peso) e coloque os arquivos em `images/collections/<slug>/` — o `<slug>` é o mesmo nome da coleção em minúsculas. Capa de coleção: exporte por volta de **900px de largura** e **anote as dimensões** (largura × altura) — elas entram na entrada de dados (campos `coverW`/`coverH`).
 2. **Passo 2 — Entrada de dados:** abra `js/collections.js`, ache o bloco comentado **TEMPLATE** no fim da lista, copie, descomente e preencha: `slug` (minúsculas, sem acento/espaço — vira o link e o nome da pasta de fotos), `title`, `story`, `cover` (vazio = capa de bloco de cor; com foto = caminho relativo tipo `images/collections/<slug>/capa.webp`), `coverAlt` (formato `Campanha OUG RANCH — [cena]` da regra nº 3), `coverW`/`coverH` (as dimensões anotadas no Squoosh) e `order`. Duas coleções **nunca** compartilham o mesmo `slug` nem o mesmo número de `order`.
