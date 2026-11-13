@@ -15,7 +15,7 @@ Static, mobile-first fashion lookbook for the OUG RANCH brand (pre-launch, Brazi
 - [x] **Phase 1: Foundation — Scaffold, Design System & Navigation** - Static repo scaffold on GitHub Pages, design tokens/fonts, header/nav/footer, full-screen hero
 - [ ] **Phase 2: Home Page — Collections & Brand Info** - `collections.js` data system, clickable collection cards (mobile carousel / desktop hover), brand info section
 - [ ] **Phase 3: Lookbook Pages & Lightbox** - Generic `lookbook.html?c=slug` template with photo stack (mobile) / grid (desktop) and full lightbox
-- [ ] **Phase 4: Editorial Polish, Social SEO & Launch** - Marquee verified, complete OG/social set validated live (announcement bar declined by owner, D-01), final accessibility/perf pass, end-to-end launch check
+- [x] **Phase 4: Editorial Polish, Social SEO & Launch** - Marquee verified, complete OG/social set validated live (announcement bar declined by owner, D-01), final accessibility/perf pass, end-to-end launch check
 
 ## Phase Details
 
@@ -96,4 +96,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Foundation — Scaffold, Design System & Navigation | 2/2 | Complete | 2026-11-13 |
 | 2. Home Page — Collections & Brand Info | 1/1 | Executed — pending live check | 2026-11-13 |
 | 3. Lookbook Pages & Lightbox | 0/0 | Not started | - |
-| 4. Editorial Polish, Social SEO & Launch | 0/0 | Not started | - |
+| 4. Editorial Polish, Social SEO & Launch | 1/1 | Executed — pending live validation (owner UAT post-push) | 2026-11-13 |

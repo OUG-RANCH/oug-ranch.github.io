@@ -1,19 +1,19 @@
 ---
 gsd_state_version: "1.0"
 milestone: v1.0
-current_phase: 2
-current_phase_name: Home Page — Collections & Brand Info
+current_phase: 4
+current_phase_name: Editorial Polish, Social SEO & Launch
 status: complete
-stopped_at: Phase 2 complete — plan 02-01 executed and pushed; live-site visual check pending post-push
-last_updated: "2026-11-13T19:10:00.000Z"
+stopped_at: Phase 4 executed (plan 04-01) and pushed — live share validation = owner UAT post-push
+last_updated: "2026-11-13T20:30:00.000Z"
 last_activity: 2026-11-13
-last_activity_desc: Phase 2 complete — data-driven collections shipped (6 commits)
-state_head: c2216bb
+last_activity_desc: Phase 4 plan 04-01 executed — OG card + share/SEO layer + sitemap/robots + touch-target audit shipped (5 commits)
+state_head: b57603a
 progress:
   total_phases: 4
-  completed_phases: 2
-  total_plans: 3
-  completed_plans: 3
+  completed_phases: 3
+  total_plans: 4
+  completed_plans: 4
 ---
 
 # Project State
@@ -27,12 +27,12 @@ See: .planning/PROJECT.md (updated 2026-11-13)
 
 ## Current Position
 
-Phase: 2 (Home Page — Collections & Brand Info) — COMPLETE
+Phase: 4 (Editorial Polish, Social SEO & Launch) — EXECUTED (non-photo scope; Phase 3 stays blocked on owner photos)
 Plan: 1 of 1 (executed)
-Status: Phase complete — ready for Phase 3 planning (Lookbook Pages & Lightbox); live-site visual check pending post-push
-Last activity: 2026-11-13 — Plan 02-01 executed: data-driven collections shipped, all six sentinels green, pushed to main
+Status: Plan 04-01 shipped + pushed — live share validation (Sharing Debugger + real WhatsApp test) and the phone end-to-end check are owner UAT; full launch closes with Phase 3
+Last activity: 2026-11-13 — Plan 04-01 executed: OG card, share/SEO metadata on 3 pages, JSON-LD, sitemap/robots, touch targets ≥44px (v=8), planning docs reconciled; five sentinels green
 
-Progress: [██████████] 100% (Phase 2: 1/1 plans)
+Progress: [██████████] 100% (Phase 4: 1/1 plans)
 
 ## Performance Metrics
 
@@ -47,6 +47,7 @@ Progress: [██████████] 100% (Phase 2: 1/1 plans)
 |-------|-------|-------|----------|
 | 01 | 2/2 | ~27min | ~14min |
 | 02 | 1/1 | ~8min | ~8min |
+| 04 | 1/1 | ~10min | ~10min |
 
 **Recent Trend:**
 - Last 5 plans: 12min, 15min, 8min
@@ -60,6 +61,7 @@ Progress: [██████████] 100% (Phase 2: 1/1 plans)
 | Phase 01 P01-01 | 12min | 2 tasks | 12 files |
 | Phase 01 P01-02 | 15min | 3 tasks | 13 files (4 created, 5 modified, 4 deleted) |
 | Phase 02 P02-01 | 8min | 5 tasks | 7 files (2 created, 5 modified) |
+| Phase 04 P04-01 | 10min | 6 tasks | 10 files (3 created, 7 modified) |
 
 ## Accumulated Context
 
@@ -80,6 +82,11 @@ Recent decisions affecting current work:
 - [Phase 02]: Collections are data-driven from ONE file — `js/collections.js` (`window.OUG_COLLECTIONS` array with `order` field; D-01 planner pick over per-folder data files): adding a collection = photo folder + one data entry, TEMPLATE block teaches each field, README section "Adicionar ou reordenar coleções" documents the two-step flow
 - [Phase 02]: Hover zoom shipped desktop-only — `min-width: 768px and (hover: hover)` media query, subtle 1.02 tile / 1.03 photo, reduced-motion kill switch (D-07); mobile stacked scroll untouched (D-06); COL-03 annotated superseded and BRAND-01..04 deferred in REQUIREMENTS.md (checkboxes untouched)
 - [Phase 02]: No noscript card fallback (the data file is itself a script — a copy would triplicate approved texts and drift); renderer is createElement/textContent/setAttribute-only with slug regex guard (skip + console.warn) and a friendly Portuguese `.cards-error` path — early ground for Phase 3 PLAT-04
+- [Phase 04]: NAV-05 announcement bar OWNER-DECLINED (D-01, "Não quero barra") — never ships; HERO-03/SEO-01..05/A11Y-03/PERF-03 marked Complete with gate evidence; SEO-05 promoted from v2-deferred per D-05
+- [Phase 04]: Share metadata convention — absolute https://oug-ranch.github.io/ URLs ONLY in canonical/og/twitter/sitemap/JSON-LD; body hrefs stay relative; 404 gets title+description only (self-contained, og-free)
+- [Phase 04]: OG card = typographic fallback drawn with System.Drawing (AI generation unavailable — no credits); owner swaps images/og-card.jpg later per README "Imagem de compartilhamento" (1200×630 JPEG ≤300 KB, zero HTML edits)
+- [Phase 04]: Arrows ←→↗ ACCEPTED-fallback — Inter latin subset lacks U+2190/2192/2197 (only 2191/2193 present); no unicode-range edit (fake fix); fallback font renders them
+- [Phase 04]: Touch targets ≥44px everywhere — masthead-link, text-link, index-list a widened visual-neutrally; cache-bust bumped v=7→v=8; sitemap lists home only until Phase 3 real pages exist (D-04)
 
 ### Pending Todos
 
@@ -100,5 +107,5 @@ Items acknowledged and deferred at milestone close, most recent first:
 ## Session Continuity
 
 Last session: 2026-11-13
-Stopped at: Phase 2 COMPLETE (data-driven collections shipped, verified passed, owner-approved live). Phase 3 context captured — BLOCKED by owner decision: wait for real photos. Phase 4 non-photo items (SEO metas, arrows unicode-range, polish) remain buildable.
-Resume file: .planning/phases/03-lookbook-pages-lightbox/03-CONTEXT.md — resume Phase 3 when owner delivers photos; Phase 4 non-photo items can run earlier
+Stopped at: Phase 4 EXECUTED (plan 04-01 shipped: OG card + full share/SEO layer + sitemap/robots + touch-target audit; five sentinels green, pushed to main). Live share validation = owner UAT post-push. Phase 3 BLOCKED by owner decision: wait for real photos (A11Y-02 scrim + phone launch check run there).
+Resume file: .planning/phases/03-lookbook-pages-lightbox/03-CONTEXT.md — resume Phase 3 when owner delivers photos; sitemap + per-collection OG titles join the lookbook template then
