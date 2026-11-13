@@ -51,7 +51,11 @@ Plans:
   3. Tapping/clicking anywhere on a card opens that collection's lookbook page
   4. The owner adds a new collection by creating one photo folder + one entry in `collections.js` (two steps, no markup edits) and sees it appear on home after refresh — following the commented template entry in the data file
   5. Below the collections, the brand info section shows the "sobre a marca" placeholder text plus working Instagram, WhatsApp (wa.me) and e-mail links
-**Plans**: TBD
+**Plans**: 1 plan (criterion 2's mobile-carousel wording superseded by 02-CONTEXT D-06 stacked scroll; criterion 5 brand-info deferred per D-08)
+
+Plans:
+**Wave 1**
+- [ ] 02-01-PLAN.md — Data-driven collections: `js/collections.js` data file + renderer, cards mount, hover zoom, README guide, REQUIREMENTS annotations
 **UI hint**: yes
 
 ### Phase 3: Lookbook Pages & Lightbox
