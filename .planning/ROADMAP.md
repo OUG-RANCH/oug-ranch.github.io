@@ -33,7 +33,10 @@ Static, mobile-first fashion lookbook for the OUG RANCH brand (pre-launch, Brazi
 **Plans**: 2 plans
 
 Plans:
+**Wave 1**
 - [ ] 01-01-PLAN.md — Walking Skeleton: assets + tokens + full branded home end-to-end (header/nav/drawer, hero `<picture>` + CTA, placeholder section, footer, fonts, favicon, `.nojekyll`)
+
+**Wave 2** *(blocked on Wave 1 completion)*
 - [ ] 01-02-PLAN.md — Self-contained branded 404 + Portuguese owner guide (README) + GitHub Pages publish checkpoint
 **UI hint**: yes
 
