@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página não encontrada — OUG RANCH</title>
+  <!--
+    Página 404 AUTOCONTIDA — não referencia ./css, ./js, ./images nem ./fonts.
+    O GitHub Pages serve este arquivo para QUALQUER caminho inexistente (em qualquer
+    profundidade). Se ele carregasse css/styles.css com caminho relativo, o navegador
+    resolveria o caminho contra a pasta da URL errada e a página apareceria sem estilo.
+    Por isso: estilos embutidos, wordmark em texto e um mini script que conserta o
+    link "voltar pro início" para caminhos aninhados.
+  -->
+  <style>
+    /* Tokens locais (duplicados do css/styles.css em valores simples) */
+    :root { --bg:#F4F4EF; --ink:#2B2623; --accent:#BB6F47; --rule:rgba(43,38,35,.2); --gutter:16px; }
+    @media (min-width:768px) { :root { --gutter:32px; } }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:system-ui,sans-serif; }
+    .wrap {
+      min-height:100vh; min-height:100svh;
+      padding:64px var(--gutter) 32px;
+      display:flex; flex-direction:column; justify-content:center; gap:24px;
+    }
+    .marca { font-family:Georgia,serif; font-size:28px; letter-spacing:.02em; margin:0; }
+    h1 { font-family:Georgia,serif; font-weight:400; font-size:28px; line-height:1.2; margin:0; }
+    .corpo { line-height:1.5; margin:0; max-width:32em; }
+    a {
+      color:var(--ink); text-decoration:underline;
+      min-height:44px; display:inline-flex; align-items:center;
+    }
+    a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+    .rodape {
+      border-top:1px solid var(--rule);
+      padding:16px var(--gutter) 24px;
+      display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px;
+      font-size:14px;
+    }
+    .rodape .nome { font-family:Georgia,serif; letter-spacing:.02em; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="marca">OUG RANCH</p>
+    <h1>essa página seguiu estrada diferente.</h1>
+    <p class="corpo">O endereço que você abriu não existe por aqui (ou mudou de endereço).</p>
+    <a id="home" href="./index.html">← voltar pro início</a>
+  </main>
+  <footer class="rodape">
+    <span class="nome">OUG RANCH</span>
+    <a href="https://instagram.com/ougranch" target="_blank" rel="noopener">@ougranch ↗</a>
+  </footer>
+  <script>
+    // conserta o link de início quando o 404 é servido num caminho aninhado
+    // (ex.: /oug-ranch/nao-existe/aninhado/ → base = /oug-ranch/nao-existe/aninhado/)
+    document.getElementById('home').href =
+      location.pathname.replace(/\/[^/]*$/, '/') + 'index.html';
+  </script>
+</body>
+</html>
