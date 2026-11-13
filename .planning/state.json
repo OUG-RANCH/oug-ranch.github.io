@@ -1,0 +1,33 @@
+{
+  "contract": "1.0.0",
+  "flavor": "core",
+  "milestone": "v1.0",
+  "phases": [
+    {
+      "number": "1",
+      "name": "Foundation — Scaffold, Design System & Navigation",
+      "status": "pending"
+    },
+    {
+      "number": "2",
+      "name": "Home Page — Collections & Brand Info",
+      "status": "pending"
+    },
+    {
+      "number": "3",
+      "name": "Lookbook Pages & Lightbox",
+      "status": "pending"
+    },
+    {
+      "number": "4",
+      "name": "Editorial Polish, Social SEO & Launch",
+      "status": "pending"
+    }
+  ],
+  "next": {
+    "command": "/gsd-progress --next",
+    "label": "Advance to the next step",
+    "reason": "Phase 1 of 4 · executing"
+  },
+  "updated_at": "2026-11-13T14:26:32.033Z"
+}

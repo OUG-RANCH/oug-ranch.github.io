@@ -3,15 +3,15 @@
 ## v1 Requirements
 
 ### Navegação
-- [ ] **NAV-01**: Cabeçalho com logo/nome OUG RANCH clicável que volta para a home
-- [ ] **NAV-02**: No celular, menu hambúrguer abre painel com os links do site
-- [ ] **NAV-03**: No computador, links de navegação diretos no cabeçalho
-- [ ] **NAV-04**: Rodapé com nome da marca e link do Instagram
+- [x] **NAV-01**: Cabeçalho com logo/nome OUG RANCH clicável que volta para a home
+- [x] **NAV-02**: No celular, menu hambúrguer abre painel com os links do site
+- [x] **NAV-03**: No computador, links de navegação diretos no cabeçalho
+- [x] **NAV-04**: Rodapé com nome da marca e link do Instagram
 - [ ] **NAV-05**: Barra de aviso no topo com texto editável pelo dono (pausa com `prefers-reduced-motion`)
 
 ### Home / Hero
-- [ ] **HERO-01**: Hero em tela cheia com foto de campanha e nome da marca por cima (imagem separada para celular)
-- [ ] **HERO-02**: Botão "ver coleções" que rola até a seção de coleções
+- [x] **HERO-01**: Hero em tela cheia com foto de campanha e nome da marca por cima (imagem separada para celular)
+- [x] **HERO-02**: Botão "ver coleções" que rola até a seção de coleções
 - [ ] **HERO-03**: Letreiro de texto rolando em loop (nomes das coleções / palavras da marca, estilo Isa)
 
 ### Coleções
@@ -33,7 +33,7 @@
 - [ ] **BRAND-04**: Link de e-mail
 
 ### Mobile / Performance
-- [ ] **PERF-01**: Fotos otimizadas (≤1600 px, ~200–400 KB cada, WebP/JPEG) — SOP documentado para o dono
+- [x] **PERF-01**: Fotos otimizadas (≤1600 px, ~200–400 KB cada, WebP/JPEG) — SOP documentado para o dono
 - [ ] **PERF-02**: `width`/`height` em toda imagem (sem CLS); `loading="lazy"` abaixo da dobra; hero eager
 - [ ] **PERF-03**: Alvos de toque ≥ 44 px (menu, lightbox, cards)
 
@@ -44,12 +44,12 @@
 - [ ] **SEO-04**: Favicon, `sitemap.xml`, `robots.txt`, `404.html` com identidade da marca, `lang="pt-BR"`
 
 ### Acessibilidade
-- [ ] **A11Y-01**: Alt text em imagens informativas, `alt=""` em decorativas (convenção documentada)
+- [x] **A11Y-01**: Alt text em imagens informativas, `alt=""` em decorativas (convenção documentada)
 - [ ] **A11Y-02**: Texto sobre foto com contraste ≥4.5:1 via scrim
 - [ ] **A11Y-03**: Foco visível; marquee/animações pausáveis com `prefers-reduced-motion`
 
 ### Plataforma / Dono do site
-- [ ] **PLAT-01**: Site estático no GitHub Pages com `.nojekyll`, caminhos relativos e `<script>` clássicos (funciona em `file://`)
+- [x] **PLAT-01**: Site estático no GitHub Pages com `.nojekyll`, caminhos relativos e `<script>` clássicos (funciona em `file://`)
 - [ ] **PLAT-02**: Adicionar nova coleção = criar pasta de fotos + 1 entrada em `collections.js` (2 passos, sem editar markup)
 - [ ] **PLAT-03**: Guia do dono em português: trocar fotos/textos, convenção de nomes de arquivo (minúsculas, sem acento/espaço), SOP de otimização de imagens
 - [ ] **PLAT-04**: Estados amigáveis: coleção inexistente, `collections.js` quebrado, imagem com erro
@@ -81,16 +81,16 @@ Maps every v1 requirement to exactly one phase (34/34 covered).
 
 | REQ-ID | Phase | Status |
 |--------|-------|--------|
-| PLAT-01 | Phase 1 | Pending |
+| PLAT-01 | Phase 1 | Complete |
 | PLAT-03 | Phase 1 | Pending |
-| NAV-01 | Phase 1 | Pending |
-| NAV-02 | Phase 1 | Pending |
-| NAV-03 | Phase 1 | Pending |
-| NAV-04 | Phase 1 | Pending |
-| HERO-01 | Phase 1 | Pending |
-| HERO-02 | Phase 1 | Pending |
-| A11Y-01 | Phase 1 | Pending |
-| PERF-01 | Phase 1 | Pending |
+| NAV-01 | Phase 1 | Complete |
+| NAV-02 | Phase 1 | Complete |
+| NAV-03 | Phase 1 | Complete |
+| NAV-04 | Phase 1 | Complete |
+| HERO-01 | Phase 1 | Complete |
+| HERO-02 | Phase 1 | Complete |
+| A11Y-01 | Phase 1 | Complete |
+| PERF-01 | Phase 1 | Complete |
 | COL-01 | Phase 2 | Pending |
 | COL-02 | Phase 2 | Pending |
 | COL-03 | Phase 2 | Pending |
