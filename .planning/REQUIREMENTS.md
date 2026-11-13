@@ -77,8 +77,41 @@
 
 ## Traceability
 
-(Filled by roadmap — maps REQ-IDs to phases)
+Maps every v1 requirement to exactly one phase (34/34 covered).
 
-| REQ-ID | Phase |
-|--------|-------|
-| (pending) | — |
+| REQ-ID | Phase | Status |
+|--------|-------|--------|
+| PLAT-01 | Phase 1 | Pending |
+| PLAT-03 | Phase 1 | Pending |
+| NAV-01 | Phase 1 | Pending |
+| NAV-02 | Phase 1 | Pending |
+| NAV-03 | Phase 1 | Pending |
+| NAV-04 | Phase 1 | Pending |
+| HERO-01 | Phase 1 | Pending |
+| HERO-02 | Phase 1 | Pending |
+| A11Y-01 | Phase 1 | Pending |
+| PERF-01 | Phase 1 | Pending |
+| COL-01 | Phase 2 | Pending |
+| COL-02 | Phase 2 | Pending |
+| COL-03 | Phase 2 | Pending |
+| COL-04 | Phase 2 | Pending |
+| PLAT-02 | Phase 2 | Pending |
+| PERF-02 | Phase 2 | Pending |
+| BRAND-01 | Phase 2 | Pending |
+| BRAND-02 | Phase 2 | Pending |
+| BRAND-03 | Phase 2 | Pending |
+| BRAND-04 | Phase 2 | Pending |
+| LOOK-01 | Phase 3 | Pending |
+| LOOK-02 | Phase 3 | Pending |
+| LOOK-03 | Phase 3 | Pending |
+| LOOK-04 | Phase 3 | Pending |
+| PLAT-04 | Phase 3 | Pending |
+| NAV-05 | Phase 4 | Pending |
+| HERO-03 | Phase 4 | Pending |
+| SEO-01 | Phase 4 | Pending |
+| SEO-02 | Phase 4 | Pending |
+| SEO-03 | Phase 4 | Pending |
+| SEO-04 | Phase 4 | Pending |
+| A11Y-02 | Phase 4 | Pending |
+| A11Y-03 | Phase 4 | Pending |
+| PERF-03 | Phase 4 | Pending |
