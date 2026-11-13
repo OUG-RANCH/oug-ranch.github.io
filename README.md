@@ -37,8 +37,8 @@ Toda foto entra no site pelo **Squoosh** (squoosh.app — grátis, roda no naveg
 
 1. Abra a foto no Squoosh (arraste para a página).
 2. Escolha o formato **WebP**.
-3. Ajuste a **largura**: no máximo **1600px** (fotos de galeria) ou **900px** (foto do hero no celular).
-4. Ajuste a **qualidade**: entre **75 e 80** para fotos de galeria; **~85** para o hero.
+3. Ajuste a **largura**: no máximo **1600px** (fotos de galeria) ou **900px** (foto de capa no celular).
+4. Ajuste a **qualidade**: entre **75 e 80** para fotos de galeria; **~85** para capas.
 5. Marque para **apagar os metadados** (remove dados da câmera, GPS etc.).
 6. Baixe o arquivo.
 
@@ -50,7 +50,7 @@ Toda foto entra no site pelo **Squoosh** (squoosh.app — grátis, roda no naveg
 
 **Onde ficam as fotos:** dentro da pasta `images/`. As fotos de coleção entram em `images/collections/<slug>/` na próxima fase — o nome da pasta é o "endereço" da coleção (o mesmo slug usado no link, ex.: `images/collections/novo-horizonte/`).
 
-**Sobre as fotos atuais do hero:** os JPEGs atuais (`images/hero-mobile.jpg` e `images/hero-desktop.jpg`) são provisórios, só para o site nascer com cara de pronto. Quando você tiver a foto de campanha de verdade, exporte pelo Squoosh em WebP seguindo esta regra nº 2 e substitua.
+**Sobre a página inicial:** a home da OUG RANCH é só texto — não tem foto (nem arquivo de logo). As primeiras fotos do site entram com o lookbook das coleções, nas pastas `images/collections/<slug>/` descritas acima.
 
 ## Convenção de alt text (regra nº 3)
 
@@ -69,6 +69,8 @@ Toda imagem no site tem atributo `alt`, e a regra depende do tipo:
 
 Onde fica cada coisa:
 
+- **Logo/wordmark da marca**: é **texto puro no HTML** (`index.html` e `colecao.html`), em **Inter Bold** — **não existe arquivo de logo no site**. Para mudar, edite o texto direto no HTML.
+- **Fonte do site**: só uma — **Inter** (variable, auto-hospedada em `fonts/inter-variable-latin.woff2`). Pesos e tamanhos ficam no CSS.
 - **Cores, espaçamentos e tamanhos** (o "tema" do site): no topo do arquivo `css/styles.css`, no bloco `TOKENS`. Mudou o valor ali, o site inteiro muda junto.
 - **Textos das páginas** (slogan, seções, rodapé): no próprio HTML (`index.html`, e depois `collections/...` e `lookbook.html`).
 - **Texto do 404** (a página "endereço não existe"): no arquivo `404.html` mesmo — ele é autocontido, com estilo e texto embutidos.
