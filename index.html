@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OUG RANCH — Do campo ao rolê</title>
+  <!-- preload: só a Yeseva One, com crossorigin obrigatório (Inter NÃO tem preload — D-07) -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="./fonts/yeseva-one-latin.woff2">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <header>
+    <a href="./index.html"><img class="logo" src="./images/logo.png" alt="OUG RANCH" width="610" height="123"></a>
+    <nav class="nav-desktop" aria-label="principal">
+      <a href="./index.html">início</a>
+      <a href="#colecoes">coleções</a>
+      <a href="https://instagram.com/ougranch" target="_blank" rel="noopener">instagram</a>
+    </nav>
+    <button class="hamburger" aria-expanded="false" aria-controls="menu" aria-label="abrir menu"><span></span><span></span></button>
+  </header>
+
+  <dialog id="menu" class="drawer" aria-label="menu">
+    <button class="drawer-close" autofocus aria-label="fechar menu">
+      <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false">
+        <path d="M2 2 L18 18 M18 2 L2 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </svg>
+    </button>
+    <nav aria-label="menu">
+      <a href="./index.html">início</a>
+      <a href="#colecoes">coleções</a>
+      <a href="https://instagram.com/ougranch" target="_blank" rel="noopener">instagram</a>
+    </nav>
+  </dialog>
+
+  <main>
+    <section class="hero">
+      <picture>
+        <source media="(max-width: 767px)" srcset="./images/hero-mobile.jpg">
+        <img src="./images/hero-desktop.jpg"
+             alt="Campanha OUG RANCH — placeholder de campanha: gradiente terroso em tons de caramelo e café"
+             width="1600" height="1067"
+             fetchpriority="high">
+      </picture>
+      <div class="hero-scrim"></div>
+      <div class="hero-content">
+        <h1 class="hero-wordmark">OUG RANCH</h1>
+        <div>
+          <p class="hero-slogan">Do campo ao rolê, sem mudar quem você é.</p>
+          <a class="cta" href="#colecoes">ver coleções <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="colecoes">
+      <p class="tag">coleções</p>
+      <h2>chega mais — as coleções tão chegando.</h2>
+      <p class="colecoes-body">Enquanto isso, cola no nosso Instagram pra ver o que já tá saindo do galpão:
+        <a class="text-link" href="https://instagram.com/ougranch" target="_blank" rel="noopener">@ougranch</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <img class="footer-logo" src="./images/logo.png" alt="OUG RANCH" width="610" height="123">
+    <a class="footer-link" href="https://instagram.com/ougranch" target="_blank" rel="noopener">@ougranch <span aria-hidden="true">↗</span></a>
+  </footer>
+
+  <script src="./js/main.js" defer></script>
+</body>
+</html>
