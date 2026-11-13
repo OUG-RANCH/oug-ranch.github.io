@@ -74,6 +74,7 @@ Recent decisions affecting current work:
 - [Phase 01]: Published on ORG repo OUG-RANCH/oug-ranch.github.io — live URL https://oug-ranch.github.io/ (no personal username; first personal repo created then deleted)
 - [Phase 01]: Owner-approved visual direction: light cream editorial, giant Inter Bold TEXT wordmark, no hero photo, Inter only (Yeseva One removed); approved on the live site after 2 fix rounds
 - [Phase 01]: Drawer menu "site" item → https://ougranch.com.br/ (owner's store); footer carries the full slogan; owner's cowboy-hat favicon mark shipped
+- [Phase 01]: NAV-03 reconciled as owner decision — hamburger navigation at ALL viewport sizes (matches the isadeburgh reference print); desktop inline nav superseded like the hero-photo direction
 
 ### Pending Todos
 

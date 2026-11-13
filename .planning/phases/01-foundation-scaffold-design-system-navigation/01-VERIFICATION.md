@@ -1,11 +1,12 @@
 ---
 phase: 01-foundation-scaffold-design-system-navigation
 verified: 2026-11-13T13:04:05-03:00
-status: gaps_found
-route: plan-gaps
-score: 9/11 must-haves verified (7 verified + 2 superseded-by-owner; 1 failed)
+reconciled: 2026-11-13T14:40:00-03:00
+status: passed
+route: complete
+score: 9/11 must-haves verified (8 verified + 2 superseded-by-owner + 1 reconciled-by-owner-decision)
 behavior_unverified: 0
-overrides_applied: 0
+overrides_applied: 1
 covered_files:
   - .gitignore
   - .nojekyll
@@ -22,8 +23,8 @@ covered_files:
 covered_digest: "sha256:c19bda33ecb56ddb2836a480c506f0640e89f6a6485ed607a7459fec2a383bbc"
 gaps:
   - truth: "At ≥768px, navigation links appear directly in the header (NAV-03; roadmap Phase 1 success criterion 2)"
-    status: failed
-    reason: "The owner-driven rebuild (commit d39589b) dropped the scaffold's desktop inline nav; the header at ≥768px now renders only an instagram link plus the hamburger button. css/styles.css has no rule hiding .hamburger at ≥768px (no display:none media rule), so the site's only nav surface at desktop is the drawer. REQUIREMENTS.md traceability marks NAV-03 Complete — the row is not honest against the current build. Owner UAT was done on a phone, so desktop rendering was never owner-checked; this is a genuine un-owner-checked gap, not a superseded direction."
+    status: reconciled-by-owner
+    reason: "OWNER DECISION (2026-11-13, post-verification question): the owner explicitly chose hamburger-style navigation at ALL viewport sizes — 'Hambúrguer igual ao print' — matching the isadeburgh.com reference the approved visual direction is built from (top-right ≡ + one link). The desktop inline-nav pattern NAV-03 originally specified belongs to the superseded design direction, like HERO-01/HERO-02. The native <dialog> drawer is fully functional on desktop (focus trap, Esc, keyboard). REQUIREMENTS.md NAV-03 rows annotated accordingly."
     artifacts:
       - path: index.html
         issue: "masthead-links contains only the instagram link and the hamburger; no desktop site-nav links (início / coleções) anywhere in the header"

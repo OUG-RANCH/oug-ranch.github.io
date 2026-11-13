@@ -5,7 +5,7 @@
 ### Navegação
 - [x] **NAV-01**: Cabeçalho com logo/nome OUG RANCH clicável que volta para a home
 - [x] **NAV-02**: No celular, menu hambúrguer abre painel com os links do site
-- [x] **NAV-03**: No computador, links de navegação diretos no cabeçalho
+- [x] **NAV-03**: No computador, links de navegação diretos no cabeçalho *(superseded — decisão do dono 2026-11-13: menu hambúrguer em todas as telas, igual ao print de referência; ver 01-VERIFICATION.md)*
 - [x] **NAV-04**: Rodapé com nome da marca e link do Instagram
 - [ ] **NAV-05**: Barra de aviso no topo com texto editável pelo dono (pausa com `prefers-reduced-motion`)
 
@@ -85,7 +85,7 @@ Maps every v1 requirement to exactly one phase (34/34 covered).
 | PLAT-03 | Phase 1 | Complete |
 | NAV-01 | Phase 1 | Complete |
 | NAV-02 | Phase 1 | Complete |
-| NAV-03 | Phase 1 | Complete |
+| NAV-03 | Phase 1 | Complete (superseded-by-owner: hamburger em todas as telas) |
 | NAV-04 | Phase 1 | Complete |
 | HERO-01 | Phase 1 | Complete |
 | HERO-02 | Phase 1 | Complete |
