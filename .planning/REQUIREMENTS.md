@@ -17,7 +17,7 @@
 ### Coleções
 - [ ] **COL-01**: Card de coleção com capa + título + texto da história, todo clicável, abre o lookbook
 - [ ] **COL-02**: Coleções mais novas aparecem primeiro (dono reordena editando arquivo de dados)
-- [ ] **COL-03**: No celular, cards deslizáveis em largura cheia (carrossel estilo Ciena)
+- [ ] **COL-03**: No celular, cards deslizáveis em largura cheia (carrossel estilo Ciena) *(superseded — decisão do dono 2026-11-13: no celular as capas ficam empilhadas em largura cheia rolando com a página; as setas ‹ › são só do desktop quando as coleções não cabem na fileira — ver 02-CONTEXT.md D-06)*
 - [ ] **COL-04**: No computador, leve zoom na capa ao passar o mouse
 
 ### Página do Lookbook
@@ -27,10 +27,10 @@
 - [ ] **LOOK-04**: No computador, fotos em grade
 
 ### Info da Marca
-- [ ] **BRAND-01**: Texto "sobre a marca" (placeholder para o dono preencher)
-- [ ] **BRAND-02**: Link do Instagram na seção da marca
-- [ ] **BRAND-03**: Link do WhatsApp (wa.me) para contato
-- [ ] **BRAND-04**: Link de e-mail
+- [ ] **BRAND-01**: Texto "sobre a marca" (placeholder para o dono preencher) *(deferred — decisão do dono 2026-11-13: "deixar pra depois"; info real chega em alguns meses — reavaliar na Fase 4 ou no próximo marco, ver 02-CONTEXT.md D-08)*
+- [ ] **BRAND-02**: Link do Instagram na seção da marca *(deferred — decisão do dono 2026-11-13: "deixar pra depois"; info real chega em alguns meses — reavaliar na Fase 4 ou no próximo marco, ver 02-CONTEXT.md D-08)*
+- [ ] **BRAND-03**: Link do WhatsApp (wa.me) para contato *(deferred — decisão do dono 2026-11-13: "deixar pra depois"; info real chega em alguns meses — reavaliar na Fase 4 ou no próximo marco, ver 02-CONTEXT.md D-08)*
+- [ ] **BRAND-04**: Link de e-mail *(deferred — decisão do dono 2026-11-13: "deixar pra depois"; info real chega em alguns meses — reavaliar na Fase 4 ou no próximo marco, ver 02-CONTEXT.md D-08)*
 
 ### Mobile / Performance
 - [x] **PERF-01**: Fotos otimizadas (≤1600 px, ~200–400 KB cada, WebP/JPEG) — SOP documentado para o dono
