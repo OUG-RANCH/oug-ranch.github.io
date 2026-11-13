@@ -511,16 +511,19 @@ Written in pt-BR, "amigo do interior" tone. Required sections (each maps to a su
 | A6 | Placeholder hero JPEGs generated via .NET `System.Drawing` (probed available) suffice for v1; WebP reserved for owner's real photos via Squoosh SOP | Standard Stack / Scaffold | Placeholder files ~10× heavier than WebP but ≤200 KB each — within PERF-01 spirit; document deviation from UI-SPEC's `hero-*.webp` filenames in the plan |
 | A7 | `master` branch is acceptable for Pages deploy-from-branch (or rename to `main` — plan decides) | Pitfall 7 | Owner confusion at deploy; mitigated by README deploy section |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **GitHub repo creation & Pages enablement (owner/manual step)**
+1. **GitHub repo creation & Pages enablement (owner/manual step)** — RESOLVED
    - What we know: local repo exists with `master` branch and 5 commits; no remote configured yet (git status clean of remotes this session).
    - What's unclear: exact account/repo name (fixes the Pages subpath) and whether branch stays `master` or becomes `main`.
    - Recommendation: end-of-phase `checkpoint:human-verify` task — create repo + enable Pages deploy-from-branch + confirm site loads under the subpath; plan documents the exact clicks in the README.
-2. **Placeholder hero visual direction** (discretion per CONTEXT.md)
+   - Resolution: enacted as **01-02-PLAN.md Task 3** (`checkpoint:human-verify` — repo creation, Pages enablement, live checklist). Branch decision taken in **01-01-PLAN.md Task 1** (`git init -b main`, per Pitfall 7) and documented in the README deploy section (**01-02-PLAN.md Task 2**).
+2. **Placeholder hero visual direction** (discretion per CONTEXT.md) — RESOLVED
    - What we know: D-10 wants "imagem neutra/terrosa"; no real campaign photo exists.
    - Recommendation: warm gradient in brand-adjacent earth tones (caramelo/café haze), identical hue family across both crops so the mobile/desktop swap feels intentional.
-3. **Favicon monogram design** (discretion) — recommendation in Pattern 6; owner can replace later via README instructions.
+   - Resolution: decided in **01-01-PLAN.md Task 1** (action step 4) — warm caramelo/café gradient placeholders at exactly 900×1125 (4:5) and 1600×1067 (3:2), same hue family in both crops, JPEG ≤200 KB each.
+3. **Favicon monogram design** (discretion) — RESOLVED
+   - Resolution: decided in **01-01-PLAN.md Task 1** (action step 5) — cream tile with a café-colored serif "O"/"OR" monogram per Pattern 6 (never the shrunken 5:1 wordmark); the owner can replace it later via the README instructions (**01-02-PLAN.md Task 2**).
 
 ## Environment Availability
 
