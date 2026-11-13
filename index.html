@@ -46,16 +46,29 @@
       <a href="#colecoes">CHEGADA BOIADEIRA</a>
     </nav>
 
-    <!-- Faixa decorativa que rola sozinha (CSS puro, sem JS) -->
+    <!-- Faixas decorativas que rolam sozinhas (CSS puro, sem JS): 1ª ←, cercado, 2ª → -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
         <span class="marquee-run">SERRA BRUTA <span class="marquee-dot">•</span> GALPAO 78 <span class="marquee-dot">•</span> ESTRADA DE TERRA <span class="marquee-dot">•</span> CHEGADA BOIADEIRA <span class="marquee-dot">•</span>&nbsp;</span>
         <span class="marquee-run">SERRA BRUTA <span class="marquee-dot">•</span> GALPAO 78 <span class="marquee-dot">•</span> ESTRADA DE TERRA <span class="marquee-dot">•</span> CHEGADA BOIADEIRA <span class="marquee-dot">•</span>&nbsp;</span>
       </div>
     </div>
+    <div class="fence" aria-hidden="true"></div>
+    <div class="marquee marquee--rev" aria-hidden="true">
+      <div class="marquee-track marquee-track--rev">
+        <span class="marquee-run">SERRA BRUTA <span class="marquee-dot">•</span> GALPAO 78 <span class="marquee-dot">•</span> ESTRADA DE TERRA <span class="marquee-dot">•</span> CHEGADA BOIADEIRA <span class="marquee-dot">•</span>&nbsp;</span>
+        <span class="marquee-run">SERRA BRUTA <span class="marquee-dot">•</span> GALPAO 78 <span class="marquee-dot">•</span> ESTRADA DE TERRA <span class="marquee-dot">•</span> CHEGADA BOIADEIRA <span class="marquee-dot">•</span>&nbsp;</span>
+      </div>
+    </div>
 
     <section id="colecoes">
-      <h2 class="collections-title">COLEÇÕES</h2>
+      <div class="collections-head">
+        <h2 class="collections-title">COLEÇÕES</h2>
+        <div class="cards-nav">
+          <button type="button" class="cards-btn" id="cardsPrev" aria-label="coleções anteriores" hidden>‹</button>
+          <button type="button" class="cards-btn" id="cardsNext" aria-label="próximas coleções" hidden>›</button>
+        </div>
+      </div>
 
       <!-- Prints ciena: CAPA grande em retrato, legenda (título + história) DENTRO do tile,
            colada no rodapé da capa, com força de cor total. Card inteiro clicável. -->

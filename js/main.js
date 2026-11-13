@@ -46,4 +46,31 @@
   // (só quando a gaveta está aberta — senão o burger.focus() rouba o foco à toa)
   var mq = matchMedia('(min-width: 768px)');
   mq.addEventListener('change', function (e) { if (e.matches && drawer.open) closeMenu(); });
+
+  // carrossel das coleções: setas aparecem só quando as capas não cabem todas
+  var strip = document.querySelector('.cards');
+  var prevBtn = document.getElementById('cardsPrev');
+  var nextBtn = document.getElementById('cardsNext');
+  if (strip && prevBtn && nextBtn) {
+    var prefersReduced = matchMedia('(prefers-reduced-motion: reduce)');
+    function step() {
+      var card = strip.querySelector('.card');
+      return card ? card.getBoundingClientRect().width + 8 : strip.clientWidth;
+    }
+    function update() {
+      var overflow = strip.scrollWidth > strip.clientWidth + 1;
+      prevBtn.hidden = !overflow;
+      nextBtn.hidden = !overflow;
+      prevBtn.disabled = strip.scrollLeft <= 1;
+      nextBtn.disabled = strip.scrollLeft >= strip.scrollWidth - strip.clientWidth - 1;
+    }
+    function go(dir) {
+      strip.scrollBy({ left: dir * step(), behavior: prefersReduced.matches ? 'auto' : 'smooth' });
+    }
+    prevBtn.addEventListener('click', function () { go(-1); });
+    nextBtn.addEventListener('click', function () { go(1); });
+    strip.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
 })();

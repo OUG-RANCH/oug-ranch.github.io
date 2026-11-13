@@ -186,6 +186,9 @@ body.menu-open { overflow: hidden; }
 .index-list a:focus-visible {
   text-decoration-color: var(--color-accent);   /* sublinhado caramelo */
 }
+@media (min-width: 768px) {
+  .index-list a { font-size: clamp(2rem, 5vw, 3.25rem); }   /* desktop: um pouco menor */
+}
 
 /* ===== FAIXA QUE ROLA (marquee) — decorativa, CSS puro, sem JS ===== */
 .marquee {
@@ -199,11 +202,12 @@ body.menu-open { overflow: hidden; }
   width: max-content;
   animation: marquee 40s linear infinite;
 }
+.marquee-track--rev { animation-direction: reverse; }   /* 2ª faixa: rola pro outro lado */
 .marquee-run {
   display: block;
   white-space: nowrap;
   font-weight: 700;
-  font-size: clamp(1.75rem, 6vw, 3.5rem);
+  font-size: clamp(1.5rem, 5vw, 3rem);   /* levemente menor (antes: 1.75/6vw/3.5) */
   line-height: 1.1;
 }
 .marquee-dot { padding: 0 var(--space-md); }
@@ -212,10 +216,35 @@ body.menu-open { overflow: hidden; }
   to   { transform: translateX(-50%); }   /* track = 2 runs idênticos: loop perfeito */
 }
 
+/* Cerca do cercado (cercado do rancho) — desenhado em CSS puro, sem imagem:
+   3 ripas horizontais cruzadas por paus verticais de canto a canto. */
+.fence {
+  height: 24px;
+  margin: var(--space-sm) 0;
+  background-image:
+    /* paus verticais, de canto a canto */
+    repeating-linear-gradient(to right,
+      var(--color-ink) 0 5px, transparent 5px 11vw),
+    /* 3 ripas horizontais (a do meio mais centralizada) */
+    linear-gradient(to bottom,
+      transparent 0 3px,   var(--color-ink) 3px 6px,
+      transparent 6px 11px, var(--color-ink) 11px 14px,
+      transparent 14px 19px, var(--color-ink) 19px 22px,
+      transparent 22px 24px);
+}
+.marquee--rev { border-top: 0; }   /* cercado faz o papel de divisor entre as duas faixas */
+
 /* ===== COLEÇÕES — prints ciena: capas grandes lado a lado, legenda DENTRO do tile ===== */
 #colecoes { padding: var(--space-2xl) 0 var(--space-3xl); }
-.collections-title {
+.collections-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md);
   margin: 0 var(--gutter);
+}
+.collections-title {
+  margin: 0;   /* margem lateral agora mora no .collections-head */
   font-size: clamp(2rem, 7vw, 4rem);
   font-weight: 700;
   line-height: 1.05;
@@ -223,23 +252,39 @@ body.menu-open { overflow: hidden; }
   text-transform: uppercase;
   color: var(--color-ink);
 }
+.cards-nav { display: flex; gap: var(--space-xs); }
+.cards-btn {
+  border: 1px solid var(--color-ink);
+  background: transparent;
+  color: var(--color-ink);
+  width: 44px; height: 44px;          /* alvo de toque */
+  font-size: 1.5rem; line-height: 1;
+  cursor: pointer;
+}
+.cards-btn:hover:not(:disabled), .cards-btn:focus-visible { background: var(--color-accent); border-color: var(--color-accent); }
+.cards-btn:disabled { opacity: 0.35; cursor: default; }
+
+/* Fileira horizontal rolável: as setas fazem o papel da barra de rolagem */
 .cards {
-  display: grid;
-  grid-template-columns: 1fr;   /* celular: uma coluna, de ponta a ponta */
-  gap: 2px;                     /* gutters mínimos, como nos prints */
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   padding: var(--space-xl) 0 0;
+  scrollbar-width: none;             /* as setas fazem o papel da barra */
 }
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: repeat(4, 1fr);   /* 4 capas por fileira, ~1/4 cada */
-    gap: 8px;
-  }
-}
+.cards::-webkit-scrollbar { display: none; }
 
 .card {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
   display: block;
   color: var(--color-ink);
   text-decoration: none;
+}
+@media (min-width: 768px) {
+  .cards { gap: 8px; }
+  .card { flex-basis: calc((100% - 24px) / 4); }   /* mesmas 4 capas visíveis que hoje */
 }
 
 /* Capa tipográfica: bloco claro GRANDE em retrato, SEM imagem — variações tonais do creme.
