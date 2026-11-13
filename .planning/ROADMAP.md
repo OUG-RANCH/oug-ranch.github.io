@@ -30,7 +30,11 @@ Static, mobile-first fashion lookbook for the OUG RANCH brand (pre-launch, Brazi
   3. The home shows a full-screen hero with campaign photo (separate mobile crop) and brand name overlay; tapping "ver coleções" scrolls toward the collections section
   4. A footer with the brand name and Instagram link is visible on every page
   5. A non-technical owner can follow the Portuguese guide (README/editor guide) to add a photo: rename it per the naming convention (lowercase, no accents/spaces), optimize it via the documented SOP to ≤1600 px / ~200–400 KB, and see the alt-text convention documented
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Walking Skeleton: assets + tokens + full branded home end-to-end (header/nav/drawer, hero `<picture>` + CTA, placeholder section, footer, fonts, favicon, `.nojekyll`)
+- [ ] 01-02-PLAN.md — Self-contained branded 404 + Portuguese owner guide (README) + GitHub Pages publish checkpoint
 **UI hint**: yes
 
 ### Phase 2: Home Page — Collections & Brand Info
