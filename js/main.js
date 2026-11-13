@@ -43,6 +43,7 @@
   });
 
   // especificação: fechar sozinho se a tela crescer pro desktop
+  // (só quando a gaveta está aberta — senão o burger.focus() rouba o foco à toa)
   var mq = matchMedia('(min-width: 768px)');
-  mq.addEventListener('change', function (e) { if (e.matches) closeMenu(); });
+  mq.addEventListener('change', function (e) { if (e.matches && drawer.open) closeMenu(); });
 })();

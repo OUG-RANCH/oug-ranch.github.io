@@ -76,7 +76,7 @@
         }
       };
       var slug = new URLSearchParams(location.search).get('c');
-      var dados = COLECOES[slug];
+      var dados = Object.prototype.hasOwnProperty.call(COLECOES, slug) ? COLECOES[slug] : null;
       var titulo = document.getElementById('c-title');
       var historia = document.getElementById('c-story');
       if (dados) {

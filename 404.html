@@ -52,10 +52,11 @@
     <a href="https://instagram.com/ougranch" target="_blank" rel="noopener">@ougranch ↗</a>
   </footer>
   <script>
-    // conserta o link de início quando o 404 é servido num caminho aninhado
-    // (ex.: /oug-ranch/nao-existe/aninhado/ → base = /oug-ranch/nao-existe/aninhado/)
+    // conserta o link de início quando o 404 é servido num caminho aninhado,
+    // em QUALQUER profundidade (ex.: /nao-existe/aninhado/ → ../../index.html).
+    // Conta os segmentos do caminho e sobe um "../" por segmento.
     document.getElementById('home').href =
-      location.pathname.replace(/\/[^/]*$/, '/') + 'index.html';
+      '../'.repeat(location.pathname.split('/').filter(Boolean).length) + 'index.html';
   </script>
 </body>
 </html>
