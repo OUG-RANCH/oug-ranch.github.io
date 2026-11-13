@@ -72,36 +72,10 @@
       </div>
 
       <!-- Prints ciena: CAPA grande em retrato, legenda (título + história) DENTRO do tile,
-           colada no rodapé da capa, com força de cor total. Card inteiro clicável. -->
-      <div class="cards">
-        <a class="card" href="colecao.html?c=serra-bruta">
-          <span class="card-cover cover-1">
-            <span class="card-title" role="heading" aria-level="3">SERRA BRUTA</span>
-            <span class="card-story">Poeira na bota, barranco na frente e a boiada descendo a serra. Essa coleção é pra quem encara o sol das dez da manhã e a madrugada de frio lá em cima — roupa firme, igual a gente.</span>
-          </span>
-        </a>
-
-        <a class="card" href="colecao.html?c=galpao-78">
-          <span class="card-cover cover-2">
-            <span class="card-title" role="heading" aria-level="3">GALPAO 78</span>
-            <span class="card-story">Rádio ligado, moda de viola baixinho e o LED do galpão aceso até clarear. Cerveja gelada na mão, chimarrão na roda e a noite começando no galpão — pra terminar só na estrada. Vesti pra esse rolê.</span>
-          </span>
-        </a>
-
-        <a class="card" href="colecao.html?c=estrada-de-terra">
-          <span class="card-cover cover-3">
-            <span class="card-title" role="heading" aria-level="3">ESTRADA DE TERRA</span>
-            <span class="card-story">Saída do sítio de madrugada, poeira laranja pintando o para-brisa. Chega na cidade sem tirar o chapéu e ninguém perde a viagem. Essa coleção é do caminho de terra que liga a roça ao rolê.</span>
-          </span>
-        </a>
-
-        <a class="card" href="colecao.html?c=chegada-boiadeira">
-          <span class="card-cover cover-4">
-            <span class="card-title" role="heading" aria-level="3">CHEGADA BOIADEIRA</span>
-            <span class="card-story">Lida de gado no rabo do dia, turno de madrugada e o coração no ritmo da boiada. Uniforme de quem trabalha firme e comemora do mesmo jeito — sem frescura, com orgulho. Feito pra aguentar a lida toda.</span>
-          </span>
-        </a>
-      </div>
+           colada no rodapé da capa, com força de cor total. Card inteiro clicável.
+           Os cartões agora vêm da lista do dono (js/collections.js) e são
+           desenhados pelo js/collections-render.js — aqui fica só o trilho vazio. -->
+      <div class="cards" id="cardsMount"></div>
     </section>
   </main>
 
@@ -110,6 +84,12 @@
     <a class="footer-link" href="https://instagram.com/ougranch" target="_blank" rel="noopener">@ougranch <span aria-hidden="true">↗</span></a>
   </footer>
 
+  <!-- Ordem dos scripts (regra do projeto): DADOS → DESENHO → LÓGICA.
+       collections.js cria a lista, collections-render.js desenha os cartões,
+       e só então main.js decide se as setas ‹ › aparecem (ele mede a fileira
+       JÁ desenhada). Todos com defer, executam nessa mesma ordem. -->
+  <script src="./js/collections.js" defer></script>
+  <script src="./js/collections-render.js" defer></script>
   <script src="./js/main.js" defer></script>
 </body>
 </html>
