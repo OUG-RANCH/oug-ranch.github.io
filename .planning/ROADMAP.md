@@ -15,7 +15,7 @@ Static, mobile-first fashion lookbook for the OUG RANCH brand (pre-launch, Brazi
 - [x] **Phase 1: Foundation — Scaffold, Design System & Navigation** - Static repo scaffold on GitHub Pages, design tokens/fonts, header/nav/footer, full-screen hero
 - [ ] **Phase 2: Home Page — Collections & Brand Info** - `collections.js` data system, clickable collection cards (mobile carousel / desktop hover), brand info section
 - [ ] **Phase 3: Lookbook Pages & Lightbox** - Generic `lookbook.html?c=slug` template with photo stack (mobile) / grid (desktop) and full lightbox
-- [ ] **Phase 4: Editorial Polish, Social SEO & Launch** - Marquee + announcement bar, complete OG/social set validated live, final accessibility/perf pass, end-to-end launch check
+- [ ] **Phase 4: Editorial Polish, Social SEO & Launch** - Marquee verified, complete OG/social set validated live (announcement bar declined by owner, D-01), final accessibility/perf pass, end-to-end launch check
 
 ## Phase Details
 
@@ -73,17 +73,17 @@ Plans:
 **UI hint**: yes
 
 ### Phase 4: Editorial Polish, Social SEO & Launch
-**Goal**: The site launches properly: animated editorial touches (marquee, announcement bar) respect reduced motion, every page shares beautifully on WhatsApp/Instagram with complete OG/SEO metadata, the accessibility and performance details are verified, and the full journey works end-to-end on a published phone
+**Goal**: The site launches properly: animated editorial touches respect reduced motion, every page shares beautifully on WhatsApp/Instagram with complete OG/SEO metadata, the accessibility and performance details are verified, and the full journey works end-to-end on a published phone
 **Mode**: mvp
 **Depends on**: Phase 3
-**Requirements**: NAV-05, HERO-03, SEO-01, SEO-02, SEO-03, SEO-04, A11Y-02, A11Y-03, PERF-03
+**Requirements**: NAV-05 *(declined by owner, D-01 — never ships)*, HERO-03, SEO-01, SEO-02, SEO-03, SEO-04, SEO-05 *(promoted from v2-deferred per D-05)*, A11Y-02 *(pending with Phase 3 photos)*, A11Y-03, PERF-03
 **Success Criteria** (what must be TRUE):
-  1. A text marquee (collection names / brand words) loops on the home and a top announcement bar shows owner-editable text — both pause under `prefers-reduced-motion`
-  2. Sharing any page URL in WhatsApp shows a proper preview card (validated with Meta Sharing Debugger + one real share test): unique `<title>`/description per page, OG + Twitter tags with a 1200×630 image ≤300 KB, absolute canonical URLs (GitHub Pages subpath), `sitemap.xml`, `robots.txt`, favicon, `lang="pt-BR"`
-  3. Text over photos reads at ≥4.5:1 contrast (scrim), focus is visible when keyboard-navigating, and all touch targets (menu, lightbox controls, cards) are ≥44 px
+  1. A text marquee (collection names / brand words) loops on the home and pauses under `prefers-reduced-motion` (shipped Phase 1, dual-track pause verified Phase 4). ~~Top announcement bar~~ — DECLINED by the owner per 04-CONTEXT.md D-01 ("Não quero barra"): never ships, not an open condition
+  2. Sharing any page URL in WhatsApp shows a proper preview card (validated with Meta Sharing Debugger + one real share test — owner/live check after push): unique `<title>`/description per page, OG + Twitter tags with a 1200×630 image ≤300 KB, absolute canonical URLs (GitHub Pages subpath), `sitemap.xml`, `robots.txt`, favicon, `lang="pt-BR"`
+  3. Text over photos reads at ≥4.5:1 contrast (scrim — scoped to Phase 3, needs real photos), focus is visible when keyboard-navigating, and all touch targets (menu, lightbox controls, cards) are ≥44 px
   4. Every image carries `width`/`height` (no layout shift), below-fold images lazy-load, the hero loads eagerly — spot-checked on the published site
-  5. Full end-to-end launch check on a real phone: GitHub Pages URL → home → collection → lookbook → lightbox → back, all working
-**Plans**: TBD
+  5. **OWNER UAT** — full end-to-end launch check on a real phone: GitHub Pages URL → home → collection → lookbook → lightbox → back, all working. NOT automatable and NOT a task in any plan: it runs as a human checkpoint at launch, when Phase 3 executes with real photos
+**Plans**: 1/1 executed (04-01 — non-photo scope: OG card + share/SEO metadata + sitemap/robots + JSON-LD + touch-target/reduced-motion audit + REQUIREMENTS reconciliation, executed 2026-11-13; live validation post-push is owner UAT)
 **UI hint**: yes
 
 ## Progress

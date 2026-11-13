@@ -7,12 +7,12 @@
 - [x] **NAV-02**: No celular, menu hambúrguer abre painel com os links do site
 - [x] **NAV-03**: No computador, links de navegação diretos no cabeçalho *(superseded — decisão do dono 2026-11-13: menu hambúrguer em todas as telas, igual ao print de referência; ver 01-VERIFICATION.md)*
 - [x] **NAV-04**: Rodapé com nome da marca e link do Instagram
-- [ ] **NAV-05**: Barra de aviso no topo com texto editável pelo dono (pausa com `prefers-reduced-motion`)
+- [ ] **NAV-05**: Barra de aviso no topo com texto editável pelo dono (pausa com `prefers-reduced-motion`) *(superseded — decisão do dono 2026-11-13: barra de aviso RECUSADA ("Não quero barra") — nunca será implementada; ver 04-CONTEXT.md D-01)*
 
 ### Home / Hero
 - [x] **HERO-01**: Hero em tela cheia com foto de campanha e nome da marca por cima (imagem separada para celular)
 - [x] **HERO-02**: Botão "ver coleções" que rola até a seção de coleções
-- [ ] **HERO-03**: Letreiro de texto rolando em loop (nomes das coleções / palavras da marca, estilo Isa)
+- [x] **HERO-03**: Letreiro de texto rolando em loop (nomes das coleções / palavras da marca, estilo Isa) *(Complete — marquee de faixa dupla enviado na Fase 1, aprovado pelo dono; pausa nas DUAS faixas com `prefers-reduced-motion` verificada no gate AUDIT-OK do 04-01)*
 
 ### Coleções
 - [ ] **COL-01**: Card de coleção com capa + título + texto da história, todo clicável, abre o lookbook
@@ -35,18 +35,19 @@
 ### Mobile / Performance
 - [x] **PERF-01**: Fotos otimizadas (≤1600 px, ~200–400 KB cada, WebP/JPEG) — SOP documentado para o dono
 - [ ] **PERF-02**: `width`/`height` em toda imagem (sem CLS); `loading="lazy"` abaixo da dobra; hero eager
-- [ ] **PERF-03**: Alvos de toque ≥ 44 px (menu, lightbox, cards)
+- [x] **PERF-03**: Alvos de toque ≥ 44 px (menu, lightbox, cards) *(Complete — hambúrguer, fechar gaveta e .cards-btn já em 44px; .masthead-link, .text-link e .index-list a corrigidos no 04-01 — gate AUDIT-OK; lightbox segue pra Fase 3 junto com o componente)*
 
 ### SEO / Compartilhamento
-- [ ] **SEO-01**: `<title>` + `<meta description>` únicos por página
-- [ ] **SEO-02**: Open Graph + Twitter card com imagem 1200×630 (JPEG ≤300 KB) e URLs absolutas — preview bonito no WhatsApp/Instagram
-- [ ] **SEO-03**: Canonical absoluto por página (subcaminho de projeto do GitHub Pages)
-- [ ] **SEO-04**: Favicon, `sitemap.xml`, `robots.txt`, `404.html` com identidade da marca, `lang="pt-BR"`
+- [x] **SEO-01**: `<title>` + `<meta description>` únicos por página *(Complete — os três títulos já eram únicos; meta description adicionada em index/colecao/404 no 04-01, gate SEO-OK)*
+- [x] **SEO-02**: Open Graph + Twitter card com imagem 1200×630 (JPEG ≤300 KB) e URLs absolutas — preview bonito no WhatsApp/Instagram *(Complete — og-card.jpg 1200×630 (30,5 KB) + conjunto OG/Twitter completo em index e colecao, gates OG-OK/SEO-OK; validação ao vivo (Sharing Debugger + teste real de compartilhamento) fica pro dono após o push)*
+- [x] **SEO-03**: Canonical absoluto por página (subcaminho de projeto do GitHub Pages) *(Complete — canonical absoluto em index e colecao; 404 fica sem canonical por contrato de autocontenção)*
+- [x] **SEO-04**: Favicon, `sitemap.xml`, `robots.txt`, `404.html` com identidade da marca, `lang="pt-BR"` *(Complete — favicon/404/lang enviados na Fase 1; sitemap.xml + robots.txt com URLs absolutas criados no 04-01, gate SITEMAP-OK)*
+- [x] **SEO-05**: JSON-LD Organization com `sameAs` (Instagram) *(Complete — promovido do v2-deferred pra Fase 4 por D-05: Organization no index.html com url = github.io, logo = og-card e sameAs = loja + Instagram, gate SEO-OK)*
 
 ### Acessibilidade
 - [x] **A11Y-01**: Alt text em imagens informativas, `alt=""` em decorativas (convenção documentada)
-- [ ] **A11Y-02**: Texto sobre foto com contraste ≥4.5:1 via scrim
-- [ ] **A11Y-03**: Foco visível; marquee/animações pausáveis com `prefers-reduced-motion`
+- [ ] **A11Y-02**: Texto sobre foto com contraste ≥4.5:1 via scrim *(pending — fica pra Fase 3: precisa das fotos reais; mitigação com text-shadow já enviada nas capas com foto (02-01))*
+- [x] **A11Y-03**: Foco visível; marquee/animações pausáveis com `prefers-reduced-motion` *(Complete — anel `:focus-visible` global + pausa do marquee enviados na Fase 1, verificados por gate no 04-01 — AUDIT-OK; sem reconstrução)*
 
 ### Plataforma / Dono do site
 - [x] **PLAT-01**: Site estático no GitHub Pages com `.nojekyll`, caminhos relativos e `<script>` clássicos (funciona em `file://`)
@@ -59,7 +60,7 @@
 - **LOOK-05**: Links "próxima coleção →" no fim de cada lookbook (precisa ≥2 coleções reais)
 - **HERO-04**: Preloader com contador (<1s, respeita reduced-motion)
 - **HERO-05**: Vídeo em loop no hero/editorial (só com MP4 <10 MB fornecido pelo dono)
-- **SEO-05**: JSON-LD Organization com `sameAs` (Instagram)
+- **SEO-05**: JSON-LD Organization com `sameAs` (Instagram) *(promovido para a Fase 4 por D-05 — implementado e marcado [x] na lista v1 acima; não há entrada duplicada)*
 - **PERF-04**: Script auxiliar de otimização de imagens
 - **DOM-01**: Domínio próprio (ex. ougranch.com.br) — exige reedição de canonicals/OG
 - **SOC-01**: Grade estática curada de posts do Instagram (substituto sem custo do feed embutido)
@@ -106,12 +107,13 @@ Maps every v1 requirement to exactly one phase (34/34 covered).
 | LOOK-03 | Phase 3 | Pending |
 | LOOK-04 | Phase 3 | Pending |
 | PLAT-04 | Phase 3 | Pending |
-| NAV-05 | Phase 4 | Pending |
-| HERO-03 | Phase 4 | Pending |
-| SEO-01 | Phase 4 | Pending |
-| SEO-02 | Phase 4 | Pending |
-| SEO-03 | Phase 4 | Pending |
-| SEO-04 | Phase 4 | Pending |
-| A11Y-02 | Phase 4 | Pending |
-| A11Y-03 | Phase 4 | Pending |
-| PERF-03 | Phase 4 | Pending |
+| NAV-05 | Phase 4 | Declined (owner) — barra recusada per D-01, nunca implementada |
+| HERO-03 | Phase 4 | Complete (marquee Fase 1 + pausa dupla verificada 04-01) |
+| SEO-01 | Phase 4 | Complete |
+| SEO-02 | Phase 4 | Complete |
+| SEO-03 | Phase 4 | Complete |
+| SEO-04 | Phase 4 | Complete |
+| SEO-05 | Phase 4 | Complete (promoted from v2-deferred per D-05) |
+| A11Y-02 | Phase 4 | Pending — com a Fase 3 (fotos reais) |
+| A11Y-03 | Phase 4 | Complete |
+| PERF-03 | Phase 4 | Complete |
