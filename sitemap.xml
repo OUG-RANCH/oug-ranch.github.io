@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sitemap do dono: só entram páginas REAIS do site.
+     Hoje: só a home. Quando as páginas de lookbook de verdade existirem
+     (Fase 3), adicione UMA entrada por coleção aqui, ex.:
+     <url><loc>https://oug-ranch.github.io/lookbook.html?c=serra-bruta</loc></url>
+     A 404 NUNCA entra na lista. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://oug-ranch.github.io/</loc>
+    <lastmod>2026-11-13</lastmod>
+  </url>
+</urlset>

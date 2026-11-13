@@ -1,0 +1,6 @@
+# OUG RANCH — robots.txt
+# Site público: tudo pode ser rastreado.
+User-agent: *
+Allow: /
+
+Sitemap: https://oug-ranch.github.io/sitemap.xml
