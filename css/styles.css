@@ -10,29 +10,20 @@
   --color-ink: #2B2623;       /* preto café — textos */
   --color-accent: #BB6F47;    /* caramelo — acentos (hover/foco apenas) */
   --rule: rgba(43,38,35,.2);
-  --scrim: rgba(43,38,35,.55);
   --space-xs: 4px;  --space-sm: 8px;  --space-md: 16px;
   --space-lg: 24px; --space-xl: 32px; --space-2xl: 48px; --space-3xl: 64px;
-  --touch-min: 44px; --header-h: 64px; --gutter: 16px;
+  --touch-min: 44px; --gutter: 16px;
 }
 @media (min-width: 768px) { :root { --gutter: 32px; } }
 /* NÃO use o verde nem o azul de uso futuro no v1 (decisão D-02) */
 
-/* ===== FONTES (auto-hospedadas, D-05/D-06/D-07) ===== */
+/* ===== FONTE (auto-hospedada — única fonte do site: Inter, variable) ===== */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 100 900;          /* variable font: one file, all weights */
   font-display: swap;
   src: url(../fonts/inter-variable-latin.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: 'Yeseva One';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(../fonts/yeseva-one-latin.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -47,7 +38,6 @@ body {
   font-size: 16px;
   line-height: 1.5;
 }
-img { display: block; }
 a { color: inherit; }
 
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
@@ -55,40 +45,52 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .drawer[open] { animation: none; }
+  .marquee-track { animation: none; }   /* faixa decorativa: parada */
 }
 
-/* ===== CABEÇALHO (NAV-01/NAV-03) — no fluxo, NÃO fixo ===== */
-header {
+/* ===== CABEÇALHO — wordmark gigante em TEXTO + links pequenos no topo ===== */
+.masthead { padding: var(--space-sm) var(--gutter) var(--space-lg); }
+
+.masthead-links {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-between;
-  height: var(--header-h);
-  padding: 0 var(--gutter);
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--rule);
+  gap: var(--space-md);
+  min-height: var(--touch-min);
 }
-.logo { height: 28px; width: auto; }
-
-.nav-desktop {
-  display: none;                    /* celular: só o hambúrguer */
-  align-items: center;
-  gap: var(--space-xl);
-}
-.nav-desktop a {
+.masthead-link {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  text-decoration: none;
   text-decoration: underline;
   text-decoration-color: transparent;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
   padding: var(--space-sm) 0;
 }
-.nav-desktop a:hover,
-.nav-desktop a:focus-visible {
+.masthead-link:hover,
+.masthead-link:focus-visible {
   text-decoration-color: var(--color-accent);   /* sublinhado caramelo */
+}
+
+/* Wordmark: TEXTO puro em Inter Bold (não existe arquivo de logo no site) */
+.wordmark {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(3rem, 12.5vw, 11rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.wordmark-link {
+  color: inherit;
+  text-decoration: none;
+}
+.wordmark-link:hover,
+.wordmark-link:focus-visible {
+  color: var(--color-accent);   /* caramelo: só no hover/foco */
 }
 
 /* Hambúrguer: 44×44, duas linhas 20px × 2px café */
@@ -110,11 +112,6 @@ header {
   width: 20px;
   height: 2px;
   background: var(--color-ink);
-}
-
-@media (min-width: 768px) {
-  .nav-desktop { display: flex; }
-  .hamburger { display: none; }
 }
 
 /* ===== GAVETA DO MENU — <dialog> nativo (NAV-02) ===== */
@@ -160,80 +157,63 @@ body.menu-open { overflow: hidden; }
   display: flex;
   align-items: center;
   min-height: var(--touch-min);    /* alvo de toque ≥44px */
-  font-family: 'Yeseva One', Georgia, serif;
   font-size: 28px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.2;
   color: var(--color-ink);
   text-decoration: none;
 }
 
-/* ===== HERO (HERO-01/HERO-02) ===== */
-.hero { position: relative; min-height: 100vh; min-height: 100svh; }
-.hero picture,
-.hero img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-/* as proporções batem EXATAMENTE com os placeholders gerados (zero CLS) */
-@media (max-width: 767px) { .hero { aspect-ratio: 4 / 5; } }
-@media (min-width: 768px) { .hero { aspect-ratio: 3 / 2; } }
-
-.hero-scrim {
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom,
-    rgba(43,38,35,.55) 0%,
-    rgba(43,38,35,.25) 45%,
-    rgba(43,38,35,.45) 100%);
-}
-.hero-content {
-  position: relative;
+/* ===== LISTA EDITORIAL — nomes grandes, alinhados à esquerda ===== */
+.index-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: var(--space-lg);
-  min-height: 100vh;
-  min-height: 100svh;
-  padding: var(--space-lg) var(--gutter) var(--space-lg);
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-2xl) var(--gutter);
 }
-.hero-wordmark {
-  margin: 0;
-  font-family: 'Yeseva One', Georgia, serif;
+.index-list a {
+  font-size: clamp(2rem, 7vw, 4.25rem);
   font-weight: 400;
-  font-size: clamp(2.75rem, 11vw, 9rem);
-  line-height: 0.95;
-  color: var(--color-bg);
-}
-.hero-slogan {
-  margin: var(--space-md) 0 0;
-  max-width: 22em;
-  color: var(--color-bg);
-}
-.cta {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  min-height: var(--touch-min);
-  padding: 16px 24px;
-  border: 1px solid var(--color-bg);
-  background: transparent;
-  color: var(--color-bg);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  line-height: 1.1;
   text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
 }
-.cta:hover,
-.cta:focus-visible {
-  background: var(--color-accent);      /* caramelo: só no hover/foco */
-  border-color: var(--color-accent);
+.index-list a:hover,
+.index-list a:focus-visible {
+  text-decoration-color: var(--color-accent);   /* sublinhado caramelo */
 }
 
-/* ===== COLEÇÕES — estado vazio intencional (Fase 1) ===== */
-#colecoes { padding: 64px 0; }
+/* ===== FAIXA QUE ROLA (marquee) — decorativa, CSS puro, sem JS ===== */
+.marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: var(--space-md) 0;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.marquee-run {
+  display: block;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 6vw, 3.5rem);
+  line-height: 1.1;
+}
+.marquee-dot { padding: 0 var(--space-md); }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }   /* track = 2 runs idênticos: loop perfeito */
+}
+
+/* ===== COLEÇÕES — padrão ciena: CAPA → TÍTULO → HISTÓRIA, card inteiro clicável ===== */
+#colecoes { padding: var(--space-2xl) 0 var(--space-3xl); }
 .tag {
   margin: 0 var(--gutter);
   font-size: 14px;
@@ -242,29 +222,60 @@ body.menu-open { overflow: hidden; }
   text-transform: uppercase;
   color: var(--color-ink);
 }
-#colecoes h2 {
-  margin: var(--space-md) var(--gutter) 0;
-  font-family: 'Yeseva One', Georgia, serif;
-  font-weight: 400;
-  font-size: 28px;
-  line-height: 1.2;
+.cards {
+  display: grid;
+  gap: var(--space-2xl);
+  padding: var(--space-xl) var(--gutter) 0;
 }
-#colecoes .colecoes-body {
-  margin: var(--space-md) var(--gutter) 0;
-  max-width: 36em;
-}
-.text-link {
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
-.text-link:hover,
-.text-link:focus-visible {
-  text-decoration-color: var(--color-accent);   /* sublinhado caramelo */
+@media (min-width: 768px) {
+  .cards { grid-template-columns: 1fr 1fr; }   /* editorial e arejado: 2 colunas */
 }
 
-/* ===== RODAPÉ (NAV-04) ===== */
+.card {
+  display: block;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+/* Capa tipográfica: bloco claro, SEM imagem — só variações tonais do creme */
+.card-cover {
+  display: flex;
+  align-items: center;
+  aspect-ratio: 4 / 5;
+  padding: var(--space-lg);
+  border: 1px solid var(--rule);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 6vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.cover-1 { background: #F4F4EF; }
+.cover-2 { background: #EDE9DF; }
+.cover-3 { background: #E5E0D2; }
+.cover-4 { background: #EDE9DF; }
+
+.card-title {
+  margin: var(--space-md) 0 0;
+  font-weight: 700;
+  font-size: 1.25rem;              /* 20px */
+  line-height: 1.2;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.card:hover .card-title,
+.card:focus-visible .card-title {
+  text-decoration-color: var(--color-accent);   /* caramelo: só no hover/foco */
+}
+.card-story {
+  margin: var(--space-sm) 0 0;
+  max-width: 42em;
+  line-height: 1.5;
+}
+
+/* ===== RODAPÉ (NAV-04) — marca em TEXTO + instagram ===== */
 footer {
   display: flex;
   flex-direction: column;
@@ -274,7 +285,11 @@ footer {
   background: var(--color-bg);
   border-top: 1px solid var(--rule);
 }
-.footer-logo { height: 24px; width: auto; }
+.footer-brand {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
 .footer-link {
   display: inline-flex;
   align-items: center;
@@ -297,4 +312,49 @@ footer {
     align-items: center;
     justify-content: space-between;
   }
+}
+
+/* ===== PÁGINA DE COLEÇÃO (colecao.html) — placeholder do lookbook ===== */
+.colecao-main { padding: var(--space-2xl) var(--gutter) var(--space-3xl); }
+.colecao-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(2.25rem, 9vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.colecao-story {
+  margin: var(--space-lg) 0 0;
+  max-width: 38em;
+  line-height: 1.5;
+}
+.colecao-note {
+  margin: var(--space-xl) 0 0;
+  max-width: 38em;
+}
+.text-link {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.text-link:hover,
+.text-link:focus-visible {
+  text-decoration-color: var(--color-accent);   /* sublinhado caramelo */
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-min);
+  margin-top: var(--space-2xl);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.back-link:hover,
+.back-link:focus-visible {
+  text-decoration-color: var(--color-accent);
 }
