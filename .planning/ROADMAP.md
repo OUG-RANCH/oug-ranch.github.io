@@ -12,7 +12,7 @@ Static, mobile-first fashion lookbook for the OUG RANCH brand (pre-launch, Brazi
 - Integer phases (1, 2, 3, 4): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-- [ ] **Phase 1: Foundation — Scaffold, Design System & Navigation** - Static repo scaffold on GitHub Pages, design tokens/fonts, header/nav/footer, full-screen hero
+- [x] **Phase 1: Foundation — Scaffold, Design System & Navigation** - Static repo scaffold on GitHub Pages, design tokens/fonts, header/nav/footer, full-screen hero
 - [ ] **Phase 2: Home Page — Collections & Brand Info** - `collections.js` data system, clickable collection cards (mobile carousel / desktop hover), brand info section
 - [ ] **Phase 3: Lookbook Pages & Lightbox** - Generic `lookbook.html?c=slug` template with photo stack (mobile) / grid (desktop) and full lightbox
 - [ ] **Phase 4: Editorial Polish, Social SEO & Launch** - Marquee + announcement bar, complete OG/social set validated live, final accessibility/perf pass, end-to-end launch check
@@ -30,14 +30,14 @@ Static, mobile-first fashion lookbook for the OUG RANCH brand (pre-launch, Brazi
   3. The home shows a full-screen hero with campaign photo (separate mobile crop) and brand name overlay; tapping "ver coleções" scrolls toward the collections section
   4. A footer with the brand name and Instagram link is visible on every page
   5. A non-technical owner can follow the Portuguese guide (README/editor guide) to add a photo: rename it per the naming convention (lowercase, no accents/spaces), optimize it via the documented SOP to ≤1600 px / ~200–400 KB, and see the alt-text convention documented
-**Plans**: 1/2 plans executed
+**Plans**: 2/2 plans executed (live at https://oug-ranch.github.io/, owner-approved)
 
 Plans:
 **Wave 1**
 - [x] 01-01-PLAN.md — Walking Skeleton: assets + tokens + full branded home end-to-end (header/nav/drawer, hero `<picture>` + CTA, placeholder section, footer, fonts, favicon, `.nojekyll`)
 
 **Wave 2** *(blocked on Wave 1 completion)*
-- [ ] 01-02-PLAN.md — Self-contained branded 404 + Portuguese owner guide (README) + GitHub Pages publish checkpoint
+- [x] 01-02-PLAN.md — Self-contained branded 404 + Portuguese owner guide (README) + GitHub Pages publish checkpoint *(published at https://oug-ranch.github.io/; owner-approved after 2 visual fix rounds)*
 **UI hint**: yes
 
 ### Phase 2: Home Page — Collections & Brand Info
@@ -89,7 +89,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation — Scaffold, Design System & Navigation | 1/2 | In Progress | - |
+| 1. Foundation — Scaffold, Design System & Navigation | 2/2 | Complete | 2026-11-13 |
 | 2. Home Page — Collections & Brand Info | 0/0 | Not started | - |
 | 3. Lookbook Pages & Lightbox | 0/0 | Not started | - |
 | 4. Editorial Polish, Social SEO & Launch | 0/0 | Not started | - |

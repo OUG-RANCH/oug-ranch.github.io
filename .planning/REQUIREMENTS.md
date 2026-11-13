@@ -51,7 +51,7 @@
 ### Plataforma / Dono do site
 - [x] **PLAT-01**: Site estático no GitHub Pages com `.nojekyll`, caminhos relativos e `<script>` clássicos (funciona em `file://`)
 - [ ] **PLAT-02**: Adicionar nova coleção = criar pasta de fotos + 1 entrada em `collections.js` (2 passos, sem editar markup)
-- [ ] **PLAT-03**: Guia do dono em português: trocar fotos/textos, convenção de nomes de arquivo (minúsculas, sem acento/espaço), SOP de otimização de imagens
+- [x] **PLAT-03**: Guia do dono em português: trocar fotos/textos, convenção de nomes de arquivo (minúsculas, sem acento/espaço), SOP de otimização de imagens
 - [ ] **PLAT-04**: Estados amigáveis: coleção inexistente, `collections.js` quebrado, imagem com erro
 
 ## v2 Requirements (deferred)
@@ -82,7 +82,7 @@ Maps every v1 requirement to exactly one phase (34/34 covered).
 | REQ-ID | Phase | Status |
 |--------|-------|--------|
 | PLAT-01 | Phase 1 | Complete |
-| PLAT-03 | Phase 1 | Pending |
+| PLAT-03 | Phase 1 | Complete |
 | NAV-01 | Phase 1 | Complete |
 | NAV-02 | Phase 1 | Complete |
 | NAV-03 | Phase 1 | Complete |
