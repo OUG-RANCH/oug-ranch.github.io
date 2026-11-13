@@ -212,23 +212,28 @@ body.menu-open { overflow: hidden; }
   to   { transform: translateX(-50%); }   /* track = 2 runs idênticos: loop perfeito */
 }
 
-/* ===== COLEÇÕES — padrão ciena: CAPA → TÍTULO → HISTÓRIA, card inteiro clicável ===== */
+/* ===== COLEÇÕES — prints ciena: capas grandes lado a lado, legenda DENTRO do tile ===== */
 #colecoes { padding: var(--space-2xl) 0 var(--space-3xl); }
-.tag {
+.collections-title {
   margin: 0 var(--gutter);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-size: clamp(2rem, 7vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   color: var(--color-ink);
 }
 .cards {
   display: grid;
-  gap: var(--space-2xl);
-  padding: var(--space-xl) var(--gutter) 0;
+  grid-template-columns: 1fr;   /* celular: uma coluna, de ponta a ponta */
+  gap: 2px;                     /* gutters mínimos, como nos prints */
+  padding: var(--space-xl) 0 0;
 }
 @media (min-width: 768px) {
-  .cards { grid-template-columns: 1fr 1fr; }   /* editorial e arejado: 2 colunas */
+  .cards {
+    grid-template-columns: repeat(4, 1fr);   /* 4 capas por fileira, ~1/4 cada */
+    gap: 8px;
+  }
 }
 
 .card {
@@ -237,29 +242,35 @@ body.menu-open { overflow: hidden; }
   text-decoration: none;
 }
 
-/* Capa tipográfica: bloco claro, SEM imagem — só variações tonais do creme */
+/* Capa tipográfica: bloco claro GRANDE em retrato, SEM imagem — variações tonais do creme.
+   A legenda (título + história) mora DENTRO do tile, colada no rodapé da capa. */
 .card-cover {
+  position: relative;
   display: flex;
-  align-items: center;
-  aspect-ratio: 4 / 5;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 4 / 5;          /* celular: levemente mais alto, editorial */
   padding: var(--space-lg);
   border: 1px solid var(--rule);
-  font-weight: 700;
-  font-size: clamp(1.75rem, 6vw, 3rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .card-cover { aspect-ratio: 3 / 4; }   /* desktop: retrato ciena */
 }
 .cover-1 { background: #F4F4EF; }
 .cover-2 { background: #EDE9DF; }
 .cover-3 { background: #E5E0D2; }
 .cover-4 { background: #EDE9DF; }
 
+/* Legenda: café com força de cor total — sem opacidade, sem cinza lavado */
 .card-title {
-  margin: var(--space-md) 0 0;
+  display: block;
+  margin: 0;
   font-weight: 700;
-  font-size: 1.25rem;              /* 20px */
-  line-height: 1.2;
+  font-size: clamp(1.375rem, 4vw, 1.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--color-ink);
   text-decoration: underline;
   text-decoration-color: transparent;
   text-decoration-thickness: 2px;
@@ -270,9 +281,11 @@ body.menu-open { overflow: hidden; }
   text-decoration-color: var(--color-accent);   /* caramelo: só no hover/foco */
 }
 .card-story {
+  display: block;
   margin: var(--space-sm) 0 0;
-  max-width: 42em;
-  line-height: 1.5;
+  line-height: 1.45;
+  font-size: clamp(0.8125rem, 1.2vw, 0.9375rem);
+  color: var(--color-ink);
 }
 
 /* ===== RODAPÉ (NAV-04) — marca em TEXTO + instagram ===== */
