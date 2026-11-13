@@ -59,6 +59,11 @@ a { color: inherit; }
   min-height: var(--touch-min);
 }
 .masthead-link {
+  display: inline-flex;            /* caixa de toque ≥44px (PERF-03): o alvo
+                                      cresce pro alto e pra baixo, o texto
+                                      fica no mesmo lugar (fila centrada) */
+  align-items: center;
+  min-height: var(--touch-min);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -173,6 +178,10 @@ body.menu-open { overflow: hidden; }
   padding: var(--space-2xl) var(--gutter);
 }
 .index-list a {
+  display: flex;                   /* alvo de toque ≥44px (PERF-03): a caixa
+                                      cresce até 44px, o nome fica centrado */
+  align-items: center;
+  min-height: var(--touch-min);
   font-size: clamp(2rem, 7vw, 4.25rem);
   font-weight: 400;
   line-height: 1.1;
@@ -457,6 +466,11 @@ footer {
   max-width: 38em;
 }
 .text-link {
+  display: inline-flex;            /* alvo de toque ≥44px (PERF-03): a caixa
+                                      cresce, o texto segue na mesma linha
+                                      de base do parágrafo */
+  align-items: center;
+  min-height: var(--touch-min);
   text-decoration: underline;
   text-decoration-color: transparent;
   text-decoration-thickness: 1px;

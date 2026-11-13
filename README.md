@@ -65,6 +65,12 @@ Toda imagem no site tem atributo `alt`, e a regra depende do tipo:
 - **Nada de arquivo ou pasta começando com underline** (`_`). O servidor do Pages ignora/esconde esses nomes — o arquivo simplesmente não aparece no site.
 - **Nada de caminho começando com `/`** (barra). Caminhos de imagem, CSS e JS aqui dentro são sempre relativos (ex.: `./images/foto.webp`, `css/styles.css`). Caminho com `/` na frente quebra o site quando ele roda no endereço do Pages.
 
+## Imagem de compartilhamento
+
+Quando alguém compartilha o site no WhatsApp ou no Instagram, aparece um cartão de preview da marca — é o arquivo `images/og-card.jpg` (1200×630, JPEG, até 300 KB).
+
+Pra trocar por uma foto de campanha quando quiser: exporte pela **regra nº 2** (Squoosh) no tamanho **1200×630**, salve como **JPEG com até 300 KB** e substitua o arquivo `images/og-card.jpg` — **mesmo nome, mesmo lugar, zero edição de HTML**. Depois do push, confira o preview no **Meta Sharing Debugger** (developers.facebook.com/tools/debug/) pra forçar o servidor a buscar a imagem nova.
+
 ## Trocar o logo/textos
 
 Onde fica cada coisa:
