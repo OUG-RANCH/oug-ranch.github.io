@@ -1,7 +1,8 @@
 ---
 phase: "1"
 slug: "foundation-scaffold-design-system-navigation"
-status: draft
+status: approved
+reviewed_at: "2026-11-13"
 shadcn_initialized: false
 preset: none
 created: "2026-11-13"
@@ -72,7 +73,7 @@ Exactly 4 sizes (14 / 16 / 28 / display-clamp), exactly 2 weights (400 / 600). Y
 | Accent (10%) | `#BB6F47` (caramelo) | See reserved-for list below |
 | Destructive | none | No destructive actions exist in Phase 1; any future error copy renders in `#2B2623` |
 
-Tokens: `--color-bg: #F4F4EF; --color-ink: #2B2623; --color-accent: #BB6F47;` plus `--rule: rgba(43,38,35,.2)` and `--scrim: rgba(43,38,35,.55)`. Verde `#7A9B5F` and azul `#7A9B5F`/`#2C4A6F` are **out of v1** (D-02) — do not define them as active tokens.
+Tokens: `--color-bg: #F4F4EF; --color-ink: #2B2623; --color-accent: #BB6F47;` plus `--rule: rgba(43,38,35,.2)` and `--scrim: rgba(43,38,35,.55)`. Verde `#7A9B5F` and azul `#2C4A6F` are **out of v1** (D-02) — do not define them as active tokens.
 
 **Accent reserved for (exhaustive):** ① CTA "ver coleções" hover/focus fill; ② link hover/focus underline on desktop nav + footer Instagram link; ③ `:focus-visible` outline ring site-wide (2px, offset 2px). Accent is **never** used on body text, headings, logo, page backgrounds, or decorative blocks.
 
@@ -91,7 +92,7 @@ Tokens: `--color-bg: #F4F4EF; --color-ink: #2B2623; --color-accent: #BB6F47;` pl
 | 404 body | `O endereço que você abriu não existe por aqui (ou mudou de endereço).` |
 | 404 recovery link | `← voltar pro início` (to `index.html`) |
 | Footer Instagram link | `@ougranch ↗` (arrow `aria-hidden`) |
-| Aria labels | hamburger: `abrir menu` / `fechar menu` (toggles with `aria-expanded`); drawer: `role="dialog" aria-modal="true" aria-label="menu"` |
+| Aria labels | hamburger: `abrir menu` / `fechar menu` (toggles with `aria-expanded`); drawer close ✕ button: `aria-label="fechar menu"`; drawer: `role="dialog" aria-modal="true" aria-label="menu"` |
 
 No destructive confirmations in this phase. All copy is lowercase-first editorial (matches the isadeburgh print vibe) except the uppercase Label role.
 
@@ -123,7 +124,7 @@ No destructive confirmations in this phase. All copy is lowercase-first editoria
 > Empty-state and error-state COPY live in `## Copywriting Contract` above — this section covers
 > state coverage and REFERENCES those rows rather than restating the copy (de-dup).
 
-Applicable state considerations resolved: 5 covered, 2 backstop, 0 unresolved
+Applicable state considerations resolved: 29 total — 21 explicit (covered), 4 backstop, 4 n/a/deferred, 0 unresolved
 
 | Category | Element(s) | Status | Resolution / Reason |
 |----------|------------|--------|---------------------|
@@ -131,9 +132,17 @@ Applicable state considerations resolved: 5 covered, 2 backstop, 0 unresolved
 | error | hero photo (media) | ✅ covered | Native `<img>` failure degrades to the cream background with alt text; wordmark, slogan and CTA sit on the scrim area and remain readable — never a blank page |
 | loading | hero photo (media) | ✅ covered | Hero is the LCP image: loads eager with `fetchpriority="high"`; no skeleton or spinner by design (static site, no data fetching in Phase 1) |
 | populated | hero photo (media) | ✅ covered | Default render is the happy path: photo fills the hero under the scrim with wordmark + slogan + CTA |
-| overflow | Display wordmark (nav) | 🧪 backstop | `clamp()` floor 2.75rem keeps "OUG RANCH" inside a 320px viewport — verify with a held-out 320px-width check |
+| overflow | Display wordmark (hero) | 🧪 backstop | `clamp()` floor 2.75rem keeps "OUG RANCH" inside a 320px viewport — verify with a held-out 320px-width check |
 | long-text | slogan + placeholder/404 copy (static-content) | 🧪 backstop | Copy wraps naturally at line-height 1.5 with no truncation at any width — verify at 320px |
-| zero-one-many | collections placeholder (list-collection) | n/a | Static placeholder in Phase 1; zero/one/many card rendering is specified by the Phase 2 UI-SPEC |
+| empty / loading / error / populated (nav data) | header (E1), footer (E5), 404 (E6) | n/a | Static surfaces with no data source — nothing to load, fail, or populate; probe rows dismissed with this reason |
+| overflow | mobile drawer (E2) | ✅ resolved (explicit) | Drawer content scrolls vertically (`overflow-y: auto`) if it ever exceeds the viewport height — drawer stays fully usable on short screens |
+| long-text | drawer links (E2) | ✅ resolved (explicit) | Drawer links are short fixed labels; a long label wraps within the ≥44px row and the drawer scrolls (row above) — never truncated |
+| overflow | header (E1) | ✅ resolved (explicit) | Logo has fixed height (28px) and short links; nav never overflows at 320px — wordmark fallback text is single-line by design |
+| overflow | 404 page (E6) | ✅ resolved (explicit) | 404 content is a centered-left block that wraps naturally at line-height 1.5 — no fixed-height containers to overflow |
+| zero-one-many | collections placeholder (E4) | ⚠ deferred — Phase 2 | Zero/one/many card rendering is specified by the Phase 2 UI-SPEC; Phase 1 ships the intentional empty state |
+| populated / partial | collections placeholder (E4) | ⚠ deferred — Phase 2 | Populated/partial card states belong to Phase 2 (cards render from `collections.js`) |
+| zero-one-many / partial | hero (E3) | n/a | Single fixed photo, no data collection — no one/many variance in Phase 1 |
+| loading / error | drawer, header, footer, 404, placeholder (E1/E2/E4/E5/E6) | n/a | No network-fetched content in these surfaces; static markup renders instantly |
 
 <!-- Status vocabulary (locked by probe-core projectTruths):
      ✅ covered   → a plain truth string lifted into must_haves.truths
@@ -156,12 +165,12 @@ Third-party assets (GLightbox in Phase 3) are vendored files, not registries; th
 
 ## Checker Sign-Off
 
-- [ ] Dimension 1 Copywriting: PASS
-- [ ] Dimension 2 Visuals: PASS
-- [ ] Dimension 3 Color: PASS
-- [ ] Dimension 4 Typography: PASS
-- [ ] Dimension 5 Spacing: PASS
-- [ ] Dimension 6 Registry Safety: PASS
-- [ ] Dimension 7 Inventory Provenance: PASS (n/a — no design-system package; `Tool: none`)
+- [x] Dimension 1 Copywriting: PASS
+- [x] Dimension 2 Visuals: PASS (FLAG resolved: drawer ✕ has `aria-label="fechar menu"`)
+- [x] Dimension 3 Color: PASS (nit fixed: azul hex reads `#2C4A6F`)
+- [x] Dimension 4 Typography: PASS
+- [x] Dimension 5 Spacing: PASS
+- [x] Dimension 6 Registry Safety: PASS
+- [x] Dimension 7 Inventory Provenance: PASS (n/a — no design-system package; `Tool: none`)
 
-**Approval:** pending
+**Approval:** approved 2026-11-13 (checker APPROVED; recommendations applied)
