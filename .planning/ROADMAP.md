@@ -51,11 +51,11 @@ Plans:
   3. Tapping/clicking anywhere on a card opens that collection's lookbook page
   4. The owner adds a new collection by creating one photo folder + one entry in `collections.js` (two steps, no markup edits) and sees it appear on home after refresh — following the commented template entry in the data file
   5. Below the collections, the brand info section shows the "sobre a marca" placeholder text plus working Instagram, WhatsApp (wa.me) and e-mail links
-**Plans**: 1 plan (criterion 2's mobile-carousel wording superseded by 02-CONTEXT D-06 stacked scroll; criterion 5 brand-info deferred per D-08)
+**Plans**: 1/1 executed (02-01 — data-driven collections shipped 2026-11-13; criterion 2's mobile-carousel wording superseded by D-06 stacked scroll — COL-03 annotated in REQUIREMENTS.md; criterion 5 brand-info deferred per D-08 — BRAND-01..04 annotated)
 
 Plans:
 **Wave 1**
-- [ ] 02-01-PLAN.md — Data-driven collections: `js/collections.js` data file + renderer, cards mount, hover zoom, README guide, REQUIREMENTS annotations
+- [x] 02-01-PLAN.md — Data-driven collections: `js/collections.js` data file + renderer, cards mount, hover zoom, README guide, REQUIREMENTS annotations *(executed 2026-11-13; pushed to main — live check post-push)*
 **UI hint**: yes
 
 ### Phase 3: Lookbook Pages & Lightbox
@@ -94,6 +94,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation — Scaffold, Design System & Navigation | 2/2 | Complete | 2026-11-13 |
-| 2. Home Page — Collections & Brand Info | 0/0 | Not started | - |
+| 2. Home Page — Collections & Brand Info | 1/1 | Executed — pending live check | 2026-11-13 |
 | 3. Lookbook Pages & Lightbox | 0/0 | Not started | - |
 | 4. Editorial Polish, Social SEO & Launch | 0/0 | Not started | - |
